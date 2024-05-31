@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar" id="navbar">
+    <ul >
+      <li ><a href="#welcome-section" class="nav-item">About</a></li>
+      <li ><a href="#projects"class="nav-item">Work</a></li>
+      <li ><a href="#contact" class="nav-item">Contact</a></li>
+    </ul>
+    </div>
+    <div>
+      <div id="welcome-section">
+        <h1>Hey, I am Linuka</h1>
+        <p class="intro">-a web deveoper-</p>
+      </div>
+      <hr>
+      <div id="projects">
+          <h1 class="project-tile">These are some of my projects</h1>
+          <div class="project-content">
+           <div class="myproject">
+             <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg">
+             <p class="myproject-title">Trbute Page</p>
+           </div>
+           <div class="myproject">
+             <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tic-tac-toe.png">
+             <p class="myproject-title">Tic Tac Toe Game</p>
+           </div>
+           <div class="myproject">
+             <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/wiki.png">
+             <p class="myproject-title">Wikipidia viewer</p>
+           </div>
+          </div>
+           <a href="#" class="showall">Show all</a>
+          </div>
+          <hr>
+          
+          <div id="contact">
+            <h2>Let's work together...</h2>
+            <div class="register-box">
+                
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" />
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" />
+                    </div>
+
+                    <div id="errorMsg" class="error-message">
+        
+                    </div>
+                        <button type="submit" class="register-btn">Register</button>                 
+                </form>
+            
+                <p class="contact-des">How do you take your coffee?</p>
+           <ul class="social">
+        <li><a href="#" id="profile-link" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="#" id="profile-link" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+        <li><a href="#" id="profile-link" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+      </ul>
+    </div>
+        </div>
+          
+      
+        <footer>© Linuka Arambawela </footer>
+</body>
+
+<script>
+    function submitForm(event) {
+        event.preventDefault();
+
+        let username = document.getElementById('username').value;
+        let email = document.getElementById('email').value;
+
+        let errorMsg;
+
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    
+        if(username.length < 8) {
+            errorMsg = "Username must have atleast 8 characters";
+        } else if (!emailRegex.test(email)) {
+            errorMsg = "Please enter a valid email address";
+        } else {
+            errorMsg = "";
+        }
+    
+        document.getElementById('errorMsg').innerHTML = errorMsg;
+        return true;
+    }
+</script>
+</html>
